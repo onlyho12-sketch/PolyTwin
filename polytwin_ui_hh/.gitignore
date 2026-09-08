@@ -1,0 +1,42 @@
+node_modules/
+.vercel/
+.env
+.env.*
+
+# 로컬 DB — 본 파일(polytwin.db)은 커밋한다.
+# 2026-09-01 사용자 결정: 클론 직후 시드 없이 바로 뜨게 하려고 포함.
+# 저장소가 공개이므로 안에 든 계정 해시·세션 토큰·접속 기록도 공개된다.
+# 실제 계정을 쓸 때는 이 파일을 다시 제외하고 히스토리에서도 지워야 한다.
+#
+# WAL 부속 파일은 제외한다 — 순간 상태라 커밋해도 의미가 없고
+# 본 파일과 어긋나면 오히려 DB 를 깨뜨린다.
+backend/data/*.db-shm
+backend/data/*.db-wal
+
+# /data/ 는 2026-09-01 이전 DB 위치. 루트에만 적용한다 (backend/data/ 는 위 규칙).
+/data/
+
+# 작업 백업 — 저장소에 들어올 물건이 아니다
+*.backup-*.html
+*.html.bak
+_snapshot_*/
+_probe.html
+
+# 참고용 원본 소스 (자체 git 저장소 — 이 repo 에 넣지 않는다)
+# 2026-09-01 에 appendix/sourcecode/ 로 옮겼다. 356MB 이고 .git 을
+# 자기 안에 들고 있다 — 여기 들어오면 저장소가 두 배가 된다.
+appendix/sourcecode/
+
+.vercel
+.env*
+scripts/__pycache__/
+
+# 3D 원본 중 OBJ/대용량 GLB — _orig/ 자체는 커밋하지만(car.glb 등 30MB)
+# 2026-09-01 에 들어온 벤츠·페라리 원본은 셋이 1.6GB 라 git 에 넣을 수 없다.
+# 배포에는 어차피 안 들어간다(.vercelignore 의 _orig/). 감축본만 커밋한다.
+frontend/assets/models/_orig/*.obj
+frontend/assets/models/_orig/ferrari.glb
+frontend/assets/models/_orig/2015-hyundai-sonata/
+
+# PowerPoint 임시 잠금 파일 — 열려 있는 동안만 존재한다
+~$*

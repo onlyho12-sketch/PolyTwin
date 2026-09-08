@@ -7,3 +7,34 @@ learning/ui_bridge/out/
 # runtime logs overwritten by every sim run
 scripts/status_log.txt
 scripts/force_log_rail_*.csv
+
+# RL 학습 로그 — 재생성 가능한 산출물 (8.6 GB)
+learning/rl/logs/
+
+# sweep 원본 CSV (183 MB) + 그 zip (25 MB).
+# 배포에는 원래부터 싣지 않는 자료다 — 사이트는 여기서 미리 뽑아둔
+# 데이터셋/*.json (seg_best_kpi·quality_kpi) 을 읽는다. json 은 유지할 것.
+polytwin_ui_hh/frontend/데이터셋/sweep_traj_csv/
+polytwin_ui_hh/frontend/데이터셋/sweep_traj_csv.zip
+
+# 편집 중 남은 백업본
+*.bak
+
+# 최적화본(.opt.glb / 압축 mp4)의 원본 마스터 — 사이트는 최적화본만 참조한다.
+# 로컬에는 남겨두되 리포에는 싣지 않는다. (icons/_orig 는 작아서 유지)
+polytwin_ui_hh/frontend/assets/models/_orig/
+polytwin_ui_hh/frontend/assets/video/_orig/
+
+# 발표자료 원본 (24 MB) — 문서·스크린샷은 유지한다
+polytwin_ui_hh/appendix/docs/*.pptx
+
+# 로컬 SQLite — 계정(pw_hash)·세션이 들어 있다. 절대 올리지 말 것.
+# 스키마는 backend/db.js 가 만들고, 데이터는 npm run seed:data 로 채운다.
+polytwin_ui_hh/backend/data/
+*.db
+*.db-shm
+*.db-wal
+
+# 환경변수 (TURSO_AUTH_TOKEN · PT_SECRET)
+.env
+.env.*
