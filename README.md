@@ -1,5 +1,9 @@
 # PolyTwin — 자동차 차체 자동 폴리싱 디지털 트윈
 
+[![시연 영상](docs/demo-thumb.jpg)](https://github.com/onlyho12-sketch/PolyTwin/releases/download/demo/polytwin.mp4)
+
+<sub>▶ 이미지를 클릭하면 시연 영상(38초)을 내려받아 볼 수 있습니다.</sub>
+
 **Doosan M0609 6축 로봇팔** 3대(천장 C · 측면 SL/SR)가 차체를 자동 폴리싱하는
 **NVIDIA Isaac Sim** 기반 디지털 트윈입니다.
 
